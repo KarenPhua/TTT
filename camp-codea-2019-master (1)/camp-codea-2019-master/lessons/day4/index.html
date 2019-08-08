@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel='stylesheet' href='index.css' />
+</head>
+
+<body onload="resetGame()">
+    <div id ='gridControls'>
+        <button onclick="resetGame()" id="resetButton">Reset</button>
+        <label id='status'></input>
+    </div>
+    <table id='gridMain'>
+        <tr>
+            <td id='cell_0_0' class='gridSquare' onclick='cellClick(event)'></td>
+            <td id='cell_0_1' class='gridSquare' onclick='cellClick(event)'></td>
+            <td id='cell_0_2' class='gridSquare' onclick='cellClick(event)'></td>
+        </tr>
+        <tr>
+            <td id='cell_1_0' class='gridSquare' onclick='cellClick(event)'></td>
+            <td id='cell_1_1' class='gridSquare' onclick='cellClick(event)'></td>
+            <td id='cell_1_2' class='gridSquare' onclick='cellClick(event)'></td>
+        </tr>
+        <tr>
+            <td id='cell_2_0' class='gridSquare' onclick='cellClick(event)'></td>
+            <td id='cell_2_1' class='gridSquare' onclick='cellClick(event)'></td>
+            <td id='cell_2_2' class='gridSquare' onclick='cellClick(event)'></td>
+        </tr>
+    </table>
+
+    <script type='text/javascript' src='api.js'></script>
+    <script type='text/javascript' src='index.js'></script>
+</body>
+
+</html>
