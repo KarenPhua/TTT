@@ -1,12 +1,12 @@
 body {
-  background: black;
+  background: rgb(255, 120, 120);
   color: black;
   margin: 0px;
   font-family: Calibri, Helvetica, sans-serif;
 }
 
 #resetButton {
-  background-color: #4CAF50;
+  background-color: rgb(52, 224, 58);
   border: none;
   color: white;
   padding: 15px 32px;
@@ -34,9 +34,14 @@ label {
 }
 
 .gridSquare {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   text-align: center;
   height: 33%;
   width: 33%;
   font-size: 20vmin;
+}
+
+.gridSquare:hover {
+  background-color: rgb(93, 163, 255)
+//font-size: 20vmin
 }
