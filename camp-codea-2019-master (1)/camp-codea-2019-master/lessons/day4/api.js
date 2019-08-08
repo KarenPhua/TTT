@@ -142,5 +142,20 @@ function dumpBoard() {
 }
 
 function hasEmptyCell(){
-    //TODO
+    for(let i=0; i<9; i++)
+        for(let j=0; j<9; j++)
+            if(getCellValue(i,j)== EMPTY_CELL)
+                return true;
+    return false;
 }
+
+
+
+
+// function cellClick(args){
+//     const cell = args.target;
+//     var currentText = cell.innerText
+//     if(currentText == 'X')
+//     cell.innerText = 'O';
+//     else
+//         cell.innerText = 'X';
