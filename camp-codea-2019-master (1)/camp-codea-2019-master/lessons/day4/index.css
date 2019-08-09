@@ -1,12 +1,13 @@
 body {
-  background: rgb(255, 120, 120);
-  color: black;
+  background: rgb(223, 255, 255);
+  color: rgb(247, 94, 94);
   margin: 0px;
-  font-family: Calibri, Helvetica, sans-serif;
+  font-family: "Lucida Console", Monaco, monospace;
 }
 
 #resetButton {
-  background-color: rgb(52, 224, 58);
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  background-color: rgb(53, 91, 102);
   border: none;
   color: white;
   padding: 15px 32px;
@@ -16,10 +17,13 @@ body {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+  border-radius: 90%;
+
+
 }
 
 label {
-  background-color: white;
+  background-color: rgb(53, 91, 102);
   margin: 5px 10px;
   padding: 5px 10px;
 }
@@ -38,10 +42,72 @@ label {
   text-align: center;
   height: 33%;
   width: 33%;
-  font-size: 20vmin;
+  font-size: 22vmin;
+  border-radius: 3%;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .gridSquare:hover {
-  background-color: rgb(93, 163, 255)
-//font-size: 20vmin
+  background-color: rgb(53, 91, 102) /*font-size: 20vmin*/
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+button {
+  background: red;
+  border: 0;
+  font-size: 20px;
+  padding: 10px 20px;
+  position: relative;
+  animation-name: shake;
+  animation-duration: 6s;
+  animation-timing-function: ease-in;
+  cursor: pointer;
+}
+button:hover {
+  animation-name: shakeAnim;
+}
+@keyframes shakeAnim {
+  0% {left: 0}
+  1% {left: -3px}
+  2% {left: 5px}
+  3% {left: -8px}
+  4% {left: 8px}
+  5% {left: -5px}
+  6% {left: 3px}
+  7% {left: 0}
+}
+@keyframes shake {
+  0% {left: 0}
+  1% {left: -3px}
+  2% {left: 5px}
+  3% {left: -8px}
+  4% {left: 8px}
+  5% {left: -5px}
+  6% {left: 3px}
+  7% {left: 0}
+}
+
+
