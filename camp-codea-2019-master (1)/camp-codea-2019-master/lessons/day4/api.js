@@ -42,27 +42,36 @@ function setStatus(text) {
 //
 function checkRows() {
     for (let i=0; i < 3; i++) {
+        let diagCells = [];
         if (getCellValue(i,0) == getCellValue(i,1) &&
             getCellValue(i,1) == getCellValue(i,2) &&
-            getCellValue(i,0) != EMPTY_CELL)
-            return getCellValue(i,0);
+            getCellValue(i,0) != EMPTY_CELL){
+                diagCells[0] = getCellElement(i,0);
+                diagCells[1] = getCellElement(i,1);
+                diagCells[2] = getCellElement(i,2);
+                colorCellsBackground(diagCells, 'purple');
+                return getCellValue(i,0);
+            }
     }
-
     return EMPTY_CELL;
 }
-
 // checkColumns
 //
 // Checks for winner on each column
 // Returns: 'X' or 'O' or EMPTY_CELL if no column winners
-//
 
 function checkColumns() {
     for (let j=0; j < 3; j++) {
+        let diagCells = [];
         if (getCellValue(0,j) == getCellValue(1,j) &&
             getCellValue(1,j) == getCellValue(2,j) &&
-            getCellValue(0,j) != EMPTY_CELL)
-            return getCellValue(0,j);
+            getCellValue(0,j) != EMPTY_CELL){
+                diagCells[0] = getCellElement(0,j);
+                diagCells[1] = getCellElement(1,j);
+                diagCells[2] = getCellElement(2,j);
+                colorCellsBackground(diagCells, 'purple');
+                return getCellValue(0,j);
+            }
     }
 
     return EMPTY_CELL;
@@ -74,11 +83,18 @@ function checkColumns() {
 // Returns: 'X' or 'O' or EMPTY_CELL if no forward diagonal winners
 //
 function checkForwardDiagonal() {
+    let diagCells = [];
     if (getCellValue(0,2) == getCellValue(1,1) &&
         getCellValue(1,1) == getCellValue(2,0) &&
-        getCellValue(0,2) != EMPTY_CELL)
+        getCellValue(0,2) != EMPTY_CELL){
+        
+            diagCells[0] = getCellElement(0,2);
+            diagCells[1] = getCellElement(1,1);
+            diagCells[2] = getCellElement(2,0);
+            colorCellsBackground(diagCells, 'purple');
+            
         return getCellValue(0,2);
-
+        }
     return EMPTY_CELL;
 }
 
@@ -90,9 +106,15 @@ function checkForwardDiagonal() {
 function checkBackwardDiagonal() {
     if (getCellValue(0,0) == getCellValue(1,1) &&
         getCellValue(1,1) == getCellValue(2,2) &&
-        getCellValue(0,0) != EMPTY_CELL)
+        getCellValue(0,0) != EMPTY_CELL){
+            let diagCells = [];
+            diagCells[0] = getCellElement(0,0);
+            diagCells[1] = getCellElement(1,1);
+            diagCells[2] = getCellElement(2,2);
+            colorCellsBackground(diagCells, 'purple');
+            
         return getCellValue(0,0);
-
+}
     return EMPTY_CELL;
 }
 
@@ -150,8 +172,6 @@ function hasEmptyCell(){
 }
 
 
-
-
 // function cellClick(args){
 //     const cell = args.target;
 //     var currentText = cell.innerText
@@ -159,3 +179,26 @@ function hasEmptyCell(){
 //     cell.innerText = 'O';
 //     else
 //         cell.innerText = 'X';
+
+// Color the background of a COLLECTION of cells
+function colorCellsBackground (cells, color){
+    for (a=0; a<3; a++){
+        cells[a].style.backgroundColor = color;
+    } 
+}
+
+
+
+//
+// Other is after reset button in index.js
+//
+// alternative for resting board, next to reset button in index.js
+//
+function colorBoardBackground(color){
+    for(let i = 0; i < 3; i++){
+        for(let j=0; j < 3; i++){
+            let cell = getCellElement(i,j);
+            cell.style.backgroundColor = color;
+        }
+    }
+}
