@@ -1,101 +1,51 @@
-//
-// Note check off "Show timestamps" for console.log to look better.
-//
-
-const EMPTY_CELL = undefined;
-let cells = [ EMPTY_CELL, EMPTY_CELL, EMPTY_CELL,
-              EMPTY_CELL, EMPTY_CELL, EMPTY_CELL,
-              EMPTY_CELL, EMPTY_CELL, EMPTY_CELL ]
-//
-// Cell Manipulation - Translates row,col into flat index to access "cells" array
-//
-// [ 0  1  2
-//   3  4  5
-//   6  7  8 ]
-//
-
-function getCellValue(row, col) {
-   // IMPLEMENT ME!
-   return EMPTY_CELL;
+function checkRows(buttonTexts) {
+  if(buttonTexts[0]==buttonTexts[1] && buttonTexts[1]==buttonTexts[2] && (buttonTexts[0]== 'X' || buttonTexts[0] == '0'))
+  {console.log('The winner is ' + buttonTexts[1])};
+  if(buttonTexts[3]==buttonTexts[4] && buttonTexts[4]==buttonTexts[5])
+  {console.log('The winner is ' + buttonTexts[4])};
+  if(buttonTexts[6]==buttonTexts[7] && buttonTexts[7]==buttonTexts[8])
+  {console.log('The winner is ' + buttonTexts[7])};
 }
 
-
-function setCell(row, col, text) {
-   // IMPLEMENT ME!
+function checkColumns(buttonTexts) {
+  if(buttonTexts[0]==buttonTexts[3] && buttonTexts[3]==buttonTexts[6] && (buttonTexts[0]== 'X' || buttonTexts[0] == '0'))
+  {console.log('The winner is ' + buttonTexts[0])};
+  if(buttonTexts[1]==buttonTexts[4] && buttonTexts[4]==buttonTexts[7])
+  {console.log('The winner is ' + buttonTexts[1])};
+  if(buttonTexts[2]==buttonTexts[5] && buttonTexts[5]==buttonTexts[8])
+  {console.log('The winner is ' + buttonTexts[2])};
 }
 
-// checkRows
-//
-// Checks for winner on each row.
-// Returns: 'X' or 'O' or EMPTY_CELL if no row winners
-//
-function checkRows() {
-    // IMPLEMENT ME
-    return EMPTY_CELL;
+function checkDiagonals(buttonTexts) {
+  if(buttonTexts[0]==buttonTexts[4] && buttonTexts[4]==buttonTexts[8] && (buttonTexts[0]== 'X' || buttonTexts[0] == '0'))
+  {console.log('The winner is ' + buttonTexts[0])};
+  if(buttonTexts[2]==buttonTexts[4] && buttonTexts[4]==buttonTexts[6])
+  
+  {console.log('The winner is ' + buttonTexts[2])};
 }
 
-// checkColumns
-//
-// Checks for winner on each column
-// Returns: 'X' or 'O' or EMPTY_CELL if no column winners
-//
-function checkColumns() {
-    // IMPLEMENT ME
-    return EMPTY_CELL;
-}
-
-// checkForwardDiagonal
-//
-// Checks for winner on forward diagonal / where 2,0 is first cell to check
-// Returns: 'X' or 'O' or EMPTY_CELL if no forward diagonal winners
-//
-function checkForwardDiagonal() {
-    // IMPLEMENT ME
-    return EMPTY_CELL;
-}
-
-// checkBackwardDiagonal
-//
-// Checks for winner on forward diagonal \ where 0,0 is first cell to check
-// Returns: 'X' or 'O' or EMPTY_CELL if no forward diagonal winners
-//
-function checkBackwardDiagonal() {
-    // IMPLEMENT ME
-    return EMPTY_CELL;
-}
-
-function checkWinner() {
-
-    let r = checkRows();
-    let c = checkColumns();
-    let f = checkForwardDiagonal();
-    let b = checkBackwardDiagonal();
-
-    let w = r || c || f || b || EMPTY_CELL;
-
-    if (w == EMPTY_CELL)
-        console.log("No winner");
-    else
-        console.log("Winner was " + w);
-}
+function checkWinner(buttonTexts) {
+  // I'M DONE, RUN ME!
 
 
-//
-// Utility Functions
-//
-function setBoard(text) {
-    // IMPLEMENT ME
-}
+  let firstRow = '';
+  let secondRow = '';
+  let thirdRow = '';
 
-// dumpBoard
-//
-// Prints board to console, like:
-//
-// Board looks like this:
-// X - -
-// - X -
-// - - X
-function dumpBoard() {
-    console.log("Board looks like this:");
-    // IMPLEMENT ME
+  for (let i = 0; i < 3; i++) {
+    firstRow += buttonTexts[i] + ' ';
+    secondRow += buttonTexts[i+3] + ' ';
+    thirdRow += buttonTexts[i+6] + ' ';
+  }
+  console.log('Our board looks like: ');
+  console.log(firstRow);
+  console.log(secondRow);
+  console.log(thirdRow);
+
+  let rowWinner = checkRows(buttonTexts);
+  let colWinner = checkColumns(buttonTexts);
+  let diagWinner = checkDiagonals(buttonTexts);
+  let actualWinner = rowWinner || colWinner || diagWinner || 'no one';
+
+  console.log('Our winner is: ' + actualWinner);
 }
