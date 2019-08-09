@@ -1,113 +1,54 @@
-body {
-  background: rgb(223, 255, 255);
-  color: rgb(250, 219, 247);
-  margin: 0px;
-  font-family: "Lucida Console", Monaco, monospace;
+
+let currentText = 'X'
+let active = true;
+function cellClick(args) {
+    if(!active){
+        return
+    }
+    let cell = args.target;
+    if (getCellValueByCell(cell)== EMPTY_CELL){
+        setCellByCell(cell,currentText);
+        if(currentText == 'X')
+            currentText = 'O'
+    else 
+            currentText = 'X'
+
+     let winner = checkWinner()
+
+    if(winner != EMPTY_CELL){
+        active = false;
+    setStatus(winner + " is the winner!");
+    }
+    else if(!hasEmptyCell()){
+        setStatus("TIE!")
+    }
+    
 }
-
-#resetButton {
-  font-family: "Trebuchet MS", Helvetica, sans-serif;
-  background-color: rgb(112, 63, 122);
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 90%;
-
-
-}
-
-label {
-  background-color: rgb(112, 63, 122);
-  margin: 5px 10px;
-  padding: 5px 10px;
-}
-
-#gridControls{
-  margin: 10px;  
-}
-
-#gridMain {
-  height: 90vh;
-  width: 100%;
-}
-
-.gridSquare {
-  background-color: rgb(226, 203, 236);
-  text-align: center;
-  height: 33%;
-  width: 33%;
-  font-size: 22vmin;
-  border-radius: 3%;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-}
-
-.gridSquare:hover {
-  background-color: rgb(210, 166, 230) /*font-size: 20vmin*/
+    //Check if active, if not, return
+    
+    //If active, check if current cell is empty, if not, return
+    
+    //if cell is empty, set the cell with current user's symbol
+    
+    //Check winner, if found, update status and return
+    
+    //If no winner, check if the game is over, if it's over, update status and return 
+    
+    //Set current user to next user
 }
 
 
+   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* button shaking  */
-
-
-
-
-button {
-  background: red;
-  border: 0;
-  font-size: 20px;
-  padding: 10px 20px;
-  position: relative;
-  animation-name: shake;
-  animation-duration: 6s;
-  animation-timing-function: ease-in;
-  cursor: pointer;
-}
-button:hover {
-  animation-name: shakeAnim;
-}
-@keyframes shakeAnim {
-  0% {left: 0}
-  1% {left: -3px}
-  2% {left: 5px}
-  3% {left: -8px}
-  4% {left: 8px}
-  5% {left: -5px}
-  6% {left: 3px}
-  7% {left: 0}
-}
-@keyframes shake {
-  0% {left: 0}
-  1% {left: -3px}
-  2% {left: 5px}
-  3% {left: -8px}
-  4% {left: 8px}
-  5% {left: -5px}
-  6% {left: 3px}
-  7% {left: 0}
+function resetGame() {
+    setBoard(EMPTY_CELL);
+    setStatus("Playing")
+    active = true;
+    for(i=0; i<3; i++){
+        for(j=0; j<3; j++){
+            getCellElement(i, j).style.backgroundColor = 'violet';
+        }
+    }
 }
 
 
@@ -116,62 +57,3 @@ button:hover {
 
 
 
-
-
-
-/* sliding background */
-
-html {
-  height:100%;
-}
-
-body {
-  margin:0;
-}
-
-.bg {
-  animation:slide 3s ease-in-out infinite alternate;
-  background-image: linear-gradient(-60deg, rgb(253, 61, 253) 50%, rgb(173, 51, 255) 50%);
-  bottom:0;
-  left:-50%;
-  opacity:.5;
-  position:fixed;
-  right:-50%;
-  top:0;
-  z-index:-1;
-}
-
-.bg2 {
-  animation-direction:alternate-reverse;
-  animation-duration:4s;
-}
-
-.bg3 {
-  animation-duration:5s;
-}
-
-.content {
-  background-color:rgba(255,255,255,.8);
-  border-radius:.25em;
-  box-shadow:0 0 .25em rgba(0,0,0,.25);
-  box-sizing:border-box;
-  left:50%;
-  padding:10vmin;
-  position:fixed;
-  text-align:center;
-  top:50%;
-  transform:translate(-50%, -50%);
-}
-
-h1 {
-  font-family:monospace;
-}
-
-@keyframes slide {
-  0% {
-    transform:translateX(-25%);
-  }
-  100% {
-    transform:translateX(25%);
-  }
-}
