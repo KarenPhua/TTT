@@ -1,13 +1,13 @@
 body {
   background: rgb(223, 255, 255);
-  color: rgb(247, 94, 94);
+  color: rgb(250, 219, 247);
   margin: 0px;
   font-family: "Lucida Console", Monaco, monospace;
 }
 
 #resetButton {
   font-family: "Trebuchet MS", Helvetica, sans-serif;
-  background-color: rgb(53, 91, 102);
+  background-color: rgb(112, 63, 122);
   border: none;
   color: white;
   padding: 15px 32px;
@@ -23,7 +23,7 @@ body {
 }
 
 label {
-  background-color: rgb(53, 91, 102);
+  background-color: rgb(112, 63, 122);
   margin: 5px 10px;
   padding: 5px 10px;
 }
@@ -38,7 +38,7 @@ label {
 }
 
 .gridSquare {
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(226, 203, 236);
   text-align: center;
   height: 33%;
   width: 33%;
@@ -48,7 +48,7 @@ label {
 }
 
 .gridSquare:hover {
-  background-color: rgb(53, 91, 102) /*font-size: 20vmin*/
+  background-color: rgb(210, 166, 230) /*font-size: 20vmin*/
 }
 
 
@@ -109,5 +109,91 @@ button:hover {
   6% {left: 3px}
   7% {left: 0}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+html {
+  height:100%;
+}
+
+body {
+  margin:0;
+}
+
+.bg {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, rgb(253, 61, 253) 50%, rgb(173, 51, 255) 50%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2 {
+  animation-direction:alternate-reverse;
+  animation-duration:4s;
+}
+
+.bg3 {
+  animation-duration:5s;
+}
+
+.content {
+  background-color:rgba(255,255,255,.8);
+  border-radius:.25em;
+  box-shadow:0 0 .25em rgba(0,0,0,.25);
+  box-sizing:border-box;
+  left:50%;
+  padding:10vmin;
+  position:fixed;
+  text-align:center;
+  top:50%;
+  transform:translate(-50%, -50%);
+}
+
+h1 {
+  font-family:monospace;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
