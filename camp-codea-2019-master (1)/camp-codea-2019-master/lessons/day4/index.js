@@ -1,4 +1,3 @@
-
 let currentText = 'X'
 let active = true;
 function cellClick(args) {
@@ -38,7 +37,6 @@ function cellClick(args) {
 }
 
 
-   
 
 function resetGame() {
     setBoard(EMPTY_CELL);
@@ -50,5 +48,3 @@ function resetGame() {
         }
     }
 }
-
-
