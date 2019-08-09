@@ -1,3 +1,59 @@
 body {
    font-family: Calibri, Helvetica, sans-serif;
 }
+
+h1 {
+
+    text-align: center; color: greenyellow;
+}
+
+h2{
+    text-align:left; color:hsl(202, 100%, 50%);
+}
+
+#favorite-color{
+    color: blue;
+    font-weight: normal
+}
+
+table{
+    width:100%;
+    border: 5px solid blue; 
+    text-align: left
+    border-collapse: collapse;
+    
+   
+}
+
+tr, tn, td {
+    border: 5px solid blue;
+}
+
+th{
+    color: cornflowerblue;
+}
+
+button.myButton{
+    background-color: #ff3300;
+    border:none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px
+}
+
+#blue-row{
+    background-color: cyan;
+}
+#green-row{
+    background-color: greenyellow;
+}
+
+
+#my-name{
+    text-decoration: underline
+}
+}
+
