@@ -196,9 +196,17 @@ function colorCellsBackground (cells, color){
 //
 function colorBoardBackground(color){
     for(let i = 0; i < 3; i++){
-        for(let j=0; j < 3; i++){
+        for(let j=0; j < 3; j++){
             let cell = getCellElement(i,j);
             cell.style.backgroundColor = color;
         }
     }
 }
+
+
+// copmputer does, fills next cell
+// function getNextEmptyCell(){
+//     for(let i = 0; i < 3; i++){
+//         for(let j=0; j < 3; i++){
+// }
+// getNextEmptyCell
